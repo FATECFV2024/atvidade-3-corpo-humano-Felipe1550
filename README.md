@@ -1,65 +1,37 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/3YVg2wK-)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=16018842&assignment_repo_type=AssignmentRepo)
-# Atividade 3
+Simulação dos Modificadores de Acesso e Getters/Setters - Classe CorpoHumano
 
+Implementação da Classe CorpoHumano
+Atributos: Massa, Volume, Densidade, Altura.
+Métodos:
+Getters e Setters para todos os atributos.
+Método para calcular o IMC (Índice de Massa Corporal).
 
+Perguntas e Respostas
+1. O que aconteceu ao tentar acessar diretamente o atributo massa?
+Código:
+    corpo.massa = 2; // Erro de compilação, 'massa' é private
 
-## Sumário 
-- [Como Utilizar Esse Projteto](#como-utilizar-esse-projeto-)
-- [Desafio da Atividade](#desafio-da-atividade-)
-- [No Microsoft Teams](#no-microsoft-teams--)
-- [Regras](#regras-)
-- [Feedback](#feedback-)
+Ocorrência:
+ O código gerou um erro de compilação porque o atributo massa é privado e não pode ser acessado diretamente.
 
-## Como Utilizar Esse Projeto 📁
+Conclusão:
+ Atributos privados são protegidos contra acessos externos, garantindo a integridade dos dados. Para modificá-los, é necessário usar os métodos setters.
 
-- Nesse projeto há  pasta:
-    - FazerVsCode:Exclusiva para realizar no VisualStudio Code. 
+2. O que aconteceu ao mudar private float massa para public float massa?
 
-- Na sua máquina tem que ter instalado o <a href="https://www.oracle.com/br/java/technologies/downloads/" target="_blank">Java Development Kit (JDK) </a> 
-- Caso utilize o VisualStudio Code é necessário que instale a <a href="https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack" target="_blank">Extension Pack for Java</a>
+Código:
+    corpo.massa = 2; // Acesso permitido, 'massa' agora é public
+    Ocorrência: O código funcionou e o valor de massa foi alterado diretamente.
+Conclusão:
+ Tornar um atributo público permite que ele seja acessado e modificado diretamente, o que pode comprometer a integridade dos dados, já que não há controle sobre os valores atribuídos.
 
+3. O que aconteceu ao mudar public void setVolume(float volume) para private?
 
-## Escopo da Atividade 🛠️
+Código:
+    corpo.setVolume(0.1f); // Erro de compilação, 'setVolume' é private
 
-- Implementar uma classe que seja capaz de simular atuação dos modificadores de acesso e respectivamente os métodos getters/setters: 
-- Implemente a Classe Corpo Humano e o Construtor  
-- Implemente os métodos Getters
-- Implemente os métodos Setters
-- Implemente uma classe main que inclua as seguintes informações: Massa, Volume e Densidade
-
-
-
-### Após essa implementação responda:
-
-- Na classe Corpo_Humano inclua a linha c1.massa = "2"; logo depois de instanciar o objeto c1. Qual foi a ocorrência? Qual a conclusão sobre o que aconteceu?
-- Na classe Corpo_Humano altere a linha private float Massa para public float Massa; Qual foi a ocorrência? Qual a conclusão sobre o que aconteceu?
-- Na classe Corpo_Humano altere a linha public setVolume (float volume) para private setVolume (float volume).Qual foi a ocorrência? Qual a conclusão sobre o que aconteceu?
-
-
-<b>Colocar essa informação no Readme do Git ou Em comentários de código na classe main </b>
-
-
-## DESAFIO 🚀
-
-Implementar o Atributo e os Metodos de acesso para Altura;
-Criar um método para calcular o Indíce de Massa Corporal (IMC), sendo:
-IMC = Massa/Altura
-Exibir/Imprimir o IMC na classe main
-
-
-## No Microsoft Teams  👥
-
-- Não há necessidade fazer o upload do projeto 
-- Caso tenha realizado em dupla, mencione o NOME e RGM da dupla lá no Teams em um arquivo .txt
-
-## Regras 📄
-
-- Utilize as boas práticas de programação que são sempre mencionadas em aula e nos materiais; 
-- Observe sempre os modificadores de acesso em atributos e métodos;
-- Observe os nomes de classes e atributos;
-- Utilze comentários para elucidar o cenário elaborado;
-
-## Feedback 📨
--  Sua atividade receberá uma pontuação de 0 a 10, que compõe a Nota de Atividades da M1;
--  A nota será atribuída no Microsoft Teams
+Ocorrência:
+ O código gerou um erro de compilação, já que o método setVolume agora é privado e não pode ser acessado de fora da classe.
+ 
+Conclusão:
+ Métodos privados só podem ser usados dentro da própria classe. Isso restringe o acesso e protege a lógica interna da classe.
